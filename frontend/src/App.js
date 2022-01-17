@@ -18,6 +18,7 @@ function App() {
     
     <div>
     {/* <Navbar/> */}
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home title="Home"/>} />

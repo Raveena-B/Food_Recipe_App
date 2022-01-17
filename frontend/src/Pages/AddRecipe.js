@@ -3,6 +3,7 @@ import Navbar from "../Components/navbar";
 import "./addrecipe.css";
 
 
+
 function AddRecipe(){
     return  (
        
@@ -55,7 +56,9 @@ function AddRecipe(){
              </div>
             
             </form>
+            
         </div>
+        
       
     )
     };

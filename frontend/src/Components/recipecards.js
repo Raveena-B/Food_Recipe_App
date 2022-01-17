@@ -330,7 +330,7 @@ const Recipecards = ()=>{
             </div>
             <div className="solu_description">
             <p>
-                <img src={"Spaghetti.jfif"} style={{width:"260px" , height:"170px", borderRadius:"10px"}}/>
+                <img src={"Spaghetti.jpg"} style={{width:"260px" , height:"170px", borderRadius:"10px"}}/>
               </p>
               <div className="btn">
               <Link to = ""><button type="button" className="read_more_btn">Edit</button></Link> &nbsp;&nbsp;
