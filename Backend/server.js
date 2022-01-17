@@ -17,15 +17,20 @@ const errorHandler = require("./middleware/error");
 
 require("dotenv").config();  //these line is necessary for configuration .env file
 
-const URL = process.env.MONGODB_URL;
+const URI = process.env.MONGODB_URL;
 
-mongoose.connect(URL , {  //define connection
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
+mongoose.connect(URI, {
+
+useNewUrlParser: true, 
+
+useUnifiedTopology: true 
+
+}, err => {
+if(err) throw err;
+console.log('Connected to MongoDB!!!')
 });
-    
+
+
 const connection = mongoose.connection; //assign database connection for a constant variable
 
 connection.once("open" , () => { //open connection for one time
@@ -33,6 +38,14 @@ connection.once("open" , () => { //open connection for one time
 });
 
 const app = express();
+
+//load the 
+
+const recipeRouter = require("./routes/recipes.js");
+
+app.use("/recipe",recipeRouter);
+
+
 
 //define a port for server
 const PORT = process.env.PORT || 8070; //accually process.env.PORT is inbuilt 
