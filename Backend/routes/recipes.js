@@ -3,15 +3,13 @@ let Recipe = require ("../models/Recipe");
 
 router.route("/add").post((req, res) => {     //Add the recipe through the form
 
-    const Id = Number(req.body.Id);
+    
     const recipename = req.body.recipename;
     const ingredients = req.body.ingredients;
     const description = req.body.description;
     
-
     const newRecipe = new Recipe({
 
-        Id,
         recipename,
         ingredients,
         description,
@@ -36,7 +34,7 @@ router.route("/").post((req,res) => {         //display all recipes
 })
 
 
-router.route("/update/:id").put(async (req , res)=>{  //update only one recipe data
+router.route("/update/:id").post(async (req , res)=>{  //update only one recipe data
     let RecipeID = req.params.id;
     const recipename = req.body.recipename;
     const ingredients = req.body.ingredients;

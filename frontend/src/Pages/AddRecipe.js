@@ -2,11 +2,12 @@ import React,{useState} from "react";
 import Navbar from "../Components/navbar";
 import axios from "axios";
 import "./addrecipe.css";
+import Footer from "../Components/Footer";
 
 
 function AddRecipe(){
-
-    const [loading, setLoading] = useState(false); //additional 
+    
+    const [loading, setLoading] = useState(false); 
     const [isError, setIsError] = useState(false);
 
     const [newUser, setNewUser] = useState(
@@ -32,7 +33,7 @@ function AddRecipe(){
         formData.append('ingredients', newUser.ingredients);
         formData.append('description', newUser.description);
     
-
+       
         axios.post('http://localhost:8070/recipe/add', formData)
              .then(res => {
                 console.log(res);
@@ -46,12 +47,12 @@ function AddRecipe(){
                 setIsError(true);
                 alert(err);
              });
+            
     }
 
     const handleChange = (e) => {
         setNewUser({...newUser, [e.target.name]: e.target.value});
     }
-
     
     return  (
        
@@ -98,37 +99,36 @@ function AddRecipe(){
                     type="text"
                     placeholder="Enter the Description"
                     name="discription"
-                    value={newUser.description}
+                    value={newUser.discription}
                     onChange={handleChange} required
                     
                 />
                 </div>
              </div><br></br>
             <br></br>
-             <div class="row">
-                <input type="submit" value="Save"/>
-             </div>
+             
              <div>
                      {isError && <small className="mt-3 d-inline-block text-danger">Something went wrong. Please try again later.</small>}
                      {/*decision*/}
-                     <button
+                     <button className="row"
                         type="submit"
-                        className="btn btn-primary mt-3"
+                        className="add"
                         disabled={loading}
                         ><i class="fa fa-upload" aria-hidden="true"></i> {loading ? 'Uploading...' : 'Upload'}
                      </button>
                     
             </div>
         </form>
-        <a href="/add-recipe"><button
+        
+        {/* <a href="/add-recipe"><button
                         type="submit"
                         className="btn btn-success"
                         
-                        ><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</button></a>
+                        ><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</button></a> */}
             
         </div>
         
-      
+        
     )
     };
 

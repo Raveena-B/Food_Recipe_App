@@ -25,7 +25,7 @@ function App() {
         <Route path="/addrecipe" element={<AddRecipe title="AddRecipe"/>} />
       </Routes>
       </BrowserRouter>
-      <Footer/>
+     
     </div>
     
   );

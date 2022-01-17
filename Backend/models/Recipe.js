@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const recipeSchema = new Schema({
 
-    Id : {
-        type : Number,
-        requied: true
-    },
+   
 
     recipename :{
         type :String,
@@ -15,12 +12,12 @@ const recipeSchema = new Schema({
 
     ingredients : {
         type : String,
-        require :true
+        required :true
     },
 
     description : {
         type : String,
-        require :true
+        required :true
     },
 
     
