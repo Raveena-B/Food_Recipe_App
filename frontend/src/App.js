@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 //pages
 import Home from "./Pages/Home";
 import AddRecipe from "./Pages/AddRecipe";
+import "./Pages/addrecipe.css";
 
 
 function App() {
@@ -18,7 +19,6 @@ function App() {
     
     <div>
     {/* <Navbar/> */}
-    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home title="Home"/>} />

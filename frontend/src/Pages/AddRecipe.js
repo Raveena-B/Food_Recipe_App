@@ -10,49 +10,36 @@ function AddRecipe(){
     const [loading, setLoading] = useState(false); 
     const [isError, setIsError] = useState(false);
 
-    const [newUser, setNewUser] = useState(
-        {
+    const[recipename,setRecipeName] = useState("");
+    const[ingredients,setIngredients] = useState("");
+    const[description,setDescription] = useState("");
 
-            recipename: '',
-            ingredients : '',
-            description : '',
-           
 
-        }
-    );
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         setLoading(true);
         setIsError(false); //additional
 
 
-        const formData = new FormData();
-        formData.append('recipename', newUser.recipename);
-        formData.append('ingredients', newUser.ingredients);
-        formData.append('description', newUser.description);
-    
-       
-        axios.post('http://localhost:8070/recipe/add', formData)
-             .then(res => {
-                console.log(res);
-                setLoading(false);
-                alert("Recipe  is uploaded successfully")
-                setNewUser({recipename :'' , ingredients : '' , description : '' })
-             })
-             .catch(err => {
-                console.log(err);
-                setLoading(false);
-                setIsError(true);
-                alert(err);
-             });
-            
-    }
+        
+   
 
-    const handleChange = (e) => {
-        setNewUser({...newUser, [e.target.name]: e.target.value});
+    try {
+        const {data} = await axios.post("http://localhost:8070/recipe/add" ,
+         {recipename,ingredients,description});
+         setRecipeName("");
+         setIngredients("");
+         setDescription("");
+         
+        alert('New Food upload successfully')
+
+    } catch (error) {
+        
+        alert(error)
     }
+}
+
     
     return  (
        
@@ -69,8 +56,8 @@ function AddRecipe(){
                     type="text"
                     placeholder="Enter the Recipe Name"
                     name="recipename"
-                    value={newUser.recipename}
-                    onChange={handleChange} required
+                    value={recipename}
+                    onChange={(e)=>setRecipeName(e.target.value)} required
                 />
                 </div>
              </div><br></br>
@@ -84,23 +71,23 @@ function AddRecipe(){
                     type="text"
                     placeholder="Enter the ingredients"
                     name="ingredients"
-                    value={newUser.ingredients}
-                    onChange={handleChange} required 
+                    value={ingredients}
+                    onChange={(e)=>setIngredients(e.target.value)} required 
                 />
                 </div>
              </div><br></br>
 
              <div className="row">
                  <div className="col-25">
-                 <b><label for="discription">Description</label></b>
+                 <b><label for="description">Description</label></b>
                  </div>
                  <div className="col-75">
                 <textarea 
                     type="text"
                     placeholder="Enter the Description"
-                    name="discription"
-                    value={newUser.discription}
-                    onChange={handleChange} required
+                    name="description"
+                    value={description}
+                    onChange={(e)=>setDescription(e.target.value)} required 
                     
                 />
                 </div>

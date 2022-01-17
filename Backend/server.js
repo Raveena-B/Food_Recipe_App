@@ -21,9 +21,6 @@ const URI = process.env.MONGODB_URL;
 
 mongoose.connect(URI, {
 
-useNewUrlParser: true, 
-
-useUnifiedTopology: true 
 
 }, err => {
 if(err) throw err;
@@ -39,13 +36,6 @@ connection.once("open" , () => { //open connection for one time
 
 const app = express();
 
-//load the 
-
-const recipeRouter = require("./routes/recipes.js");
-
-app.use("/recipe",recipeRouter);
-
-
 
 //define a port for server
 const PORT = process.env.PORT || 8070; //accually process.env.PORT is inbuilt 
@@ -58,3 +48,13 @@ app.use(express.json()); //parse various different custom JSON types as JSON
 app.listen(PORT , () => {
     console.log(`Server is up and running on port number ${PORT}`);
 });
+
+//load the 
+
+const recipeRouter = require("./routes/recipes.js");
+
+app.use("/recipe",recipeRouter);
+
+
+
+

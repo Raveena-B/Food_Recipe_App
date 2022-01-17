@@ -19,7 +19,7 @@ router.route("/add").post((req, res) => {     //Add the recipe through the form
 
     newRecipe.save()                          //js promises to diplay output
            .then(() => res.json('New Recipe Added'))
-           .catch(err => res.status(400).json('Error: ' + err));
+           .catch(err => res.json('Error: ' + err));
 });
 
 

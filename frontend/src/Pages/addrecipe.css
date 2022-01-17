@@ -58,6 +58,21 @@
         background-color: #a68a64;
       }  
   
+  /* .add1{
+
+        background-color: #582f0e;
+        color:white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        margin-left: -60px;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #a68a64;
+      }  */
   
   .container {
     border-radius: 10px;
