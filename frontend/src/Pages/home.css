@@ -1,0 +1,12 @@
+.overlay {
+    position:absolute;
+  top:-200%;
+  left:20%;
+  z-index:1;
+}
+
+.topText {
+    color: white;
+    font-size: 20px;
+    align-self: center;
+  }
