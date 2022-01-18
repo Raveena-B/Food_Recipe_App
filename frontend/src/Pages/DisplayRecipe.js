@@ -74,9 +74,7 @@ export default class DisplayRecipie extends React.Component {               //cr
                    <div className="details">
                      <div>
                        <div style={{float:"right"}}>
-                         <img src ={"images/" + i.photo} style={{width:"200px" , height:"200px"}}
-                         className = "border border-danger rounded-circle"
-                         />
+                         
                        </div>
                        <p >🥘<b style={{color:"red"}}>recipename  : </b>{i.recipename}</p>
                        <p >🍲<b style={{color:"green"}}>ingredients : </b>{i.ingredients} </p>
@@ -85,6 +83,8 @@ export default class DisplayRecipie extends React.Component {               //cr
                      </div>
                    
                      <a href="/edit"><button className="btn btn-secondary">Edit</button></a>
+                     <> </>
+                     <a href="/delete"><button className="btn btn-secondary">Delete</button></a>
                      
        
                    </div>
