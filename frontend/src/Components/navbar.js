@@ -9,7 +9,7 @@ function Navbar(){
             
                 <Link className="navigationHome" to="/">Home</Link>
                 <Link className="navigation" to="/addrecipe">Add Recipe</Link>
-                {/* <button className="add1">Refresh Page</button> */}
+                
             </div>
         
     );

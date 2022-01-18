@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-   
+    color: black
   }
   
   input[type=text], select, textarea{
@@ -22,11 +22,13 @@
     font-size: 30px;
     color: #284b63;
     text-align: center;
+    
   }
 
   label {
     padding: 12px 12px 12px 0;
     display: inline-block;
+    color: black;
   }
   
   input[type=submit] {
@@ -58,7 +60,7 @@
         background-color: #a68a64;
       }  
   
-  /* .add1{
+  .add1{
 
         background-color: #582f0e;
         color:white;
@@ -72,7 +74,7 @@
       
       input[type=submit]:hover {
         background-color: #a68a64;
-      }  */
+      }  
   
   .container {
     border-radius: 10px;
@@ -82,7 +84,7 @@
     width: 900px;
     margin-left: 320px;
     margin-top: 50px;
-    
+    color: black;
     
   }
   
@@ -92,6 +94,7 @@
     margin-top: 6px;
     font-family: sans-serif;
     font-style: bold;
+    color: black;
   }
   
   .col-75 {
@@ -114,5 +117,24 @@
     .col-25, .col-75, input[type=submit] {
       width: 100%;
       margin-top: 0;
+    }
+
+    .refresh{
+
+    
+      background-color: #582f0e;
+      color:white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+      margin-left: -60px;
+      
+    }
+    
+    input[type=submit]:hover {
+      background-color: #a68a64;
+    
     }
   }

@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import Navbar from "../Components/navbar";
 import axios from "axios";
 import "./addrecipe.css";
-import Footer from "../Components/Footer";
+
 
 
 function AddRecipe(){
@@ -22,16 +22,13 @@ function AddRecipe(){
         setIsError(false); //additional
 
 
-        
-   
-
     try {
         const {data} = await axios.post("http://localhost:8070/recipe/add" ,
          {recipename,ingredients,description});
          setRecipeName("");
          setIngredients("");
          setDescription("");
-         
+
         alert('New Food upload successfully')
 
     } catch (error) {
@@ -107,11 +104,6 @@ function AddRecipe(){
             </div>
         </form>
         
-        {/* <a href="/add-recipe"><button
-                        type="submit"
-                        className="btn btn-success"
-                        
-                        ><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</button></a> */}
             
         </div>
         
