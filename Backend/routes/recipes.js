@@ -24,7 +24,7 @@ router.route("/add").post((req, res) => {     //Add the recipe through the form
 
 
 
-router.route("/").post((req,res) => {         //display all recipes
+router.route("/").get((req,res) => {         //display all recipes
 
     Recipe.find().then((recipes)=>{
         res.json(recipes)

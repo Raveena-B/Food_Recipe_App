@@ -38,8 +38,8 @@ function Home(){
               </video>
               <div className="display">
               <DisplayRecipie/>
-              <List/>
-             
+              
+              <Link to ="/addrecipe" className="add"><input type="submit" value="Add a Recipe"/></Link>
               <input type="submit" className="refresh" value="Refresh page"/>
               <Footer/>
               </div>

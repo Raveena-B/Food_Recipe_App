@@ -11,6 +11,7 @@ export default class DisplayRecipie extends React.Component {               //cr
     filteredData: []
   };
 
+ 
   handleInputChange = event => {                 //handle th event
     const query = event.target.value;
      
@@ -92,7 +93,7 @@ export default class DisplayRecipie extends React.Component {               //cr
           </p>
              )}
          </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-         <Link to ="/addrecipe" className="add"><input type="submit" value="Add a Recipe"/></Link>
+         
    
        </div>
         
