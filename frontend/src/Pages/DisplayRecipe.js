@@ -4,14 +4,14 @@ import './displayrecipe.css';
 import {Link} from "react-router-dom";
 
 
-export default class DisplayRecipie extends React.Component {
+export default class DisplayRecipie extends React.Component {               //create DisplayRecipie method
   state = {
-    query: "",
+    query: "",             
     data: [],
     filteredData: []
   };
 
-  handleInputChange = event => {
+  handleInputChange = event => {                 //handle th event
     const query = event.target.value;
      
     this.setState(prevState => {
@@ -26,14 +26,14 @@ export default class DisplayRecipie extends React.Component {
     });
   };
 
-   getData = () => {
+   getData = () => {                          //fetch data from th edatabase
     fetch(`http://localhost:8070/recipe`)
       .then(response => response.json())
       .then(data => {
         const { query } = this.state;
         const filteredData = data.filter(element => {
           return(
-        element.recipename.toLowerCase().includes(query.toLowerCase()) >= 0 ||
+        element.recipename.toLowerCase().includes(query.toLowerCase()) >= 0 ||          //the way or style that data should be display
         element.ingredients.toLowerCase().includes(query.toLowerCase()) >= 0 ||
         element.description.toLowerCase().includes(query.toLowerCase()) >= 0 
         
@@ -47,7 +47,7 @@ export default class DisplayRecipie extends React.Component {
       });
   };
 
-  componentWillMount() {
+  componentWillMount() {        //create a state
     this.getData();
   }
 
@@ -55,7 +55,7 @@ export default class DisplayRecipie extends React.Component {
     return (
     
        <div className="App">
-         <h1>All Recipies</h1>
+         <h1>All Recipies</h1>            {/*get the data*/ }
    
    
          {/* Display data from API */}

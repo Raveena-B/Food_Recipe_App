@@ -5,9 +5,9 @@ import "./addrecipe.css";
 
 
 
-function AddRecipe(){
+function AddRecipe(){                                   //addrecipe function 
     
-    const [loading, setLoading] = useState(false); 
+    const [loading, setLoading] = useState(false);     
     const [isError, setIsError] = useState(false);
 
     const[recipename,setRecipeName] = useState("");
@@ -21,15 +21,15 @@ function AddRecipe(){
         setLoading(true);
         setIsError(false); //additional
 
-
-    try {
-        const {data} = await axios.post("http://localhost:8070/recipe/add" ,
-         {recipename,ingredients,description});
-         setRecipeName("");
+ 
+    try {                                                  
+        const {data} = await axios.post("http://localhost:8070/recipe/add" ,       //check whether recipe is uploaded or not 
+         {recipename,ingredients,description}); 
+         setRecipeName("");               //to get the empty blocks after refresh
          setIngredients("");
          setDescription("");
 
-        alert('New Food upload successfully')
+        alert('Recipe upload successfully')
 
     } catch (error) {
         
@@ -37,9 +37,9 @@ function AddRecipe(){
     }
 }
 
-    
-    return  (
-       
+     
+    return  (                     //create input feilds
+                          
              <div>
                   <Navbar/><br></br>
              <h2 className="font">Add a Recipe</h2>
@@ -91,7 +91,7 @@ function AddRecipe(){
              </div><br></br>
             <br></br>
              
-             <div>
+             <div>              {/*creaate upload and error messages */}
                      {isError && <small className="mt-3 d-inline-block text-danger">Something went wrong. Please try again later.</small>}
                      {/*decision*/}
                      <button className="row"
