@@ -13,7 +13,7 @@ export default function Footer(){
             </section>
             
             
-            <section className="">
+            <section className="*">
                 <div>
                 <br></br>
                 <div className="row mt-3">

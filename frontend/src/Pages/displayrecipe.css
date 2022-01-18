@@ -26,7 +26,7 @@
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgb(54, 202, 165);
+    background-color: rgb(226, 168, 61);
     border: none;
     color: rgb(15, 66, 54);
     transition: all 0.5s;
@@ -50,7 +50,7 @@
     width: 47%;
     color: #333;
     flex-basis: width;
-    background-color: rgb(165, 230, 230);
+    background-color: #d6f7ff;
   }
   
   .student h3 {

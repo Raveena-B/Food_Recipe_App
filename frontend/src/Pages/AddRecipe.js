@@ -72,7 +72,7 @@ function AddRecipe(){                                   //addrecipe function
                     onChange={(e)=>setIngredients(e.target.value)} required 
                 />
                 </div>
-             </div><br></br>
+             </div>
 
              <div className="row">
                  <div className="col-25">
@@ -88,7 +88,7 @@ function AddRecipe(){                                   //addrecipe function
                     
                 />
                 </div>
-             </div><br></br>
+             </div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <br></br>
              
              <div>              {/*creaate upload and error messages */}

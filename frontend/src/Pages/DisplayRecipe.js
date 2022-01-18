@@ -56,7 +56,7 @@ export default class DisplayRecipie extends React.Component {               //cr
     return (
     
        <div className="App">
-         <h1>All Recipies</h1>            {/*get the data*/ }
+         <h1>All Recipies</h1>  <br></br>          {/*get the data*/ }
    
    
          {/* Display data from API */}

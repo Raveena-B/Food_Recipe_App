@@ -1,6 +1,11 @@
+*{
+    text-align: center;
+}
+
 .font{
     font-size: 18px;
     color: white;
+    text-align: center;
 }
 
 .font1{
@@ -11,6 +16,7 @@
 .sublinks{
 
     cursor: pointer;
+    text-align: center;
     
 }
 
@@ -21,4 +27,5 @@
 
   .background{
       background-color: #7f5539;
+      content: center;
   }
